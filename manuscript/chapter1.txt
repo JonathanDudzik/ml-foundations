@@ -87,8 +87,13 @@ Python follows the order of operations for all of its mathematical operations.
 To simplify an expression means to do all the math possible, using the order of operations. Here is how we can simplify this expression in Python: 
 ```python
 answer = 10 + 1 + 6 / 2 * (3 - 1)
-print("Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals", answer)
-
-# Expected output: Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals 17.0
+print(
+	"Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals",
+	answer
+)
+```
+This is the expected output:
+```console
+Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals 17.0
 ```
 
