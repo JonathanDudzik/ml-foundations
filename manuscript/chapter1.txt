@@ -1,0 +1,94 @@
+
+
+# Title: Mathematics with Python for ML Foundations
+
+# Exponents
+There are times when we must multiply a number by itself multiple times. We could do something like this:
+
+$$2 \times 2 \times 2 \times 2 \times 2 \times 2$$
+
+But this can be a tedious way to show such an expression and hard to track how many times it is getting multiplied. Instead, we use exponents to show how many times to multiply a number. Here is an example of exponential notation:
+
+$$a^{n}$$
+
+In this exponential notation, the variable $$a$$ is called the base and the variable $$n$$ is called the exponent. The exponent represents the number of times to multiply the base by itself. We can evaluate the exponential notation when the two variables are replaced with a number like this:
+
+$$2^{6}$$
+
+In this example the number two is the base and the number six is the exponent. To solve this, we need to multiply the number two six times.
+
+## Python’s standard library supports exponents
+We can easily solve exponential problems with Python using the exponentiation operator. Here are a few examples:
+
+$$\text{Evaluate}\ a^n\ \text{when}\ a = 5,\ n = 4$$
+
+This one can be solved like this:
+```python
+a = 5
+n = 4
+answer = a ** n
+print("5^4 =", answer)
+
+#Expected output: 5^4 = 625
+```
+$$\text{Evaluate}\ -a^{a}\ \text{when}\ a=4,\ n=2$$
+
+Be careful with this one because the negative sign before the base means the answer will be negative:
+```python
+a = 4
+n = 2
+answer = -a ** n
+print("-5^4 =", answer)
+
+# Expected output: -5^4 = -16
+```
+$$\text{Evaluate}\ (-a)^{n}\ when\ a=2,\ n=3$$
+
+Inside parentheses, the negative sign means that each multiplication will be carried out on a negative base. Just keep in mind that a negative number raised to an odd power is always a negative answer:
+```python
+a = 2
+n = 3
+answer = (-a) ** n
+print("(-2)^3 =", answer)
+
+# Expected output: (-2)^3 = -8
+```
+$$\text{Evaluate}\ (-a)^{n}\ when\ a=3,\ n=4$$
+
+This is similar to the previous example. Just keep in mind that a negative number raised to an even power is always a positive answer:
+```python
+a = 3
+n = 4
+answer = (-a) ** n
+print("(-3)^4 =", answer)
+
+# Expected output: (-3)^4 = 81
+```
+# Order of Operations
+
+We must have a way of correctly sequencing calculations when an expression contains multiple operations. Otherwise, expressions may have different meanings, and they may result in different values.
+
+The order of operations is a set of rules used to clarify the order in which mathematical operations should be performed in an expression. Generally, the order of operations is executed left to right on parentheses, exponents, multiplication and division, and addition and subtraction, in that order. Order of operations is also known as the "PEMDAS" rule. Can you see why?
+
+There are three things to keep in mind:
+
+1.  Multiplication and division are of equal priority as long as they are solved left to right.
+    
+2.  The same is true for addition and subtraction: their priority is the same.
+    
+3.  When there are multiple grouping symbols, we simplify the innermost parentheses first and work outward.
+
+## Python’s standard library supports order of operations
+
+Python follows the order of operations for all of its mathematical operations.
+
+`\text{Simplify}\ 5 + 23 + 3[6 -3(4\times2)]`$
+
+To simplify an expression means to do all the math possible, using the order of operations. Here is how we can simplify this expression in Python: 
+```python
+answer = 10 + 1 + 6 / 2 * (3 - 1)
+print("Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals", answer)
+
+# Expected output: Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals 17.0
+```
+
