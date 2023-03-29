@@ -96,4 +96,4 @@ This is the expected output:
 ```console
 Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals 17.0
 ```
-
+![A Piece of Cake](num-line-1.png)
