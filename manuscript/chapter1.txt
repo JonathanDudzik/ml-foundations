@@ -1,11 +1,9 @@
-
-
-# Title: Mathematics with Python for ML Foundations
+# Title: Mathematics with Python for ML Foundations!
 
 # Exponents
 There are times when we must multiply a number by itself multiple times. We could do something like this:
 
-$$2 \times 2 \times 2 \times 2 \times 2 \times 2$$
+`2 \times 2 \times 2 \times 2 \times 2 \times 2`$
 
 But this can be a tedious way to show such an expression and hard to track how many times it is getting multiplied. Instead, we use exponents to show how many times to multiply a number. Here is an example of exponential notation:
 
@@ -96,4 +94,14 @@ This is the expected output:
 ```console
 Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals 17.0
 ```
-![A Piece of Cake](num-line-1.png)
+# Plotting Points and Intervals on the Number Line
+
+In this section, we will explore a basic number line and the steps to plot points and intervals on a number line.
+
+A number line is just a horizontal line that is used to display all the possible outcomes. It is similar to a ruler in that it helps us describe and compare numbers. We get to choose the scale of the number line and where the center is. For example, we might decide that we only need to show the numbers 70 through 90 where 80 would be the center of our number line. Typically however, number lines have zero at their center with positive numbers to the right of the zero and negative number to the left of the zero.
+
+##Create a number line
+
+To create a number line with a scale of -3 to 3, simply draw a horizontal line, mark 0 as the center, and label the numbers -3, -2, -1, 0, 1, 2, 3 from left to right:
+
+![number line without points](num-line-1.png)
