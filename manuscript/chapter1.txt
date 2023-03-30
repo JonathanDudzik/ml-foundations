@@ -1,6 +1,7 @@
-# Title: Mathematics with Python for ML Foundations!
+# Mathematics with Python for ML Foundations!
 
 # Exponents
+## Basic Concept
 There are times when we must multiply a number by itself multiple times. We could do something like this:
 
 `2 \times 2 \times 2 \times 2 \times 2 \times 2`$
@@ -15,8 +16,8 @@ In this exponential notation, the variable `a`$ is called the base and the varia
 
 In this example the number two is the base and the number six is the exponent. To solve this, we need to multiply the number two six times.
 
-## Python’s standard library supports exponents
-We can easily solve exponential problems with Python using the exponentiation operator. Here are a few examples:
+## Python Implementation
+Python’s standard library supports exponents. We can easily solve exponential problems with Python using the exponentiation operator. Here are a few examples:
 
 `\text{Evaluate}\ a^n\ \text{when}\ a = 5,\ n = 4`$
 
@@ -63,7 +64,7 @@ print("(-3)^4 =", answer)
 # Expected output: (-3)^4 = 81
 ```
 # Order of Operations
-
+## Basic Concept
 We must have a way of correctly sequencing calculations when an expression contains multiple operations. Otherwise, expressions may have different meanings, and they may result in different values.
 
 The order of operations is a set of rules used to clarify the order in which mathematical operations should be performed in an expression. Generally, the order of operations is executed left to right on parentheses, exponents, multiplication and division, and addition and subtraction, in that order. Order of operations is also known as the "PEMDAS" rule. Can you see why?
@@ -76,8 +77,7 @@ There are three things to keep in mind:
     
 3.  When there are multiple grouping symbols, we simplify the innermost parentheses first and work outward.
 
-## Python’s standard library supports order of operations
-
+## Python Implementation 
 Python follows the order of operations for all of its mathematical operations.
 
 `\text{Simplify}\ 5 + 23 + 3[6 -3(4\times2)]`$
@@ -95,12 +95,10 @@ This is the expected output:
 Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals 17.0
 ```
 # Plotting Points and Intervals on the Number Line
-
+## Basic Concept
 In this section, we will explore a basic number line and the steps to plot points and intervals on a number line.
 
 A number line is just a horizontal line that is used to display all the possible outcomes. It is similar to a ruler in that it helps us describe and compare numbers. We get to choose the scale of the number line and where the center is. For example, we might decide that we only need to show the numbers 70 through 90 where 80 would be the center of our number line. Typically however, number lines have zero at their center with positive numbers to the right of the zero and negative number to the left of the zero.
-
-##Create a number line
 
 To create a number line with a scale of -3 to 3, simply draw a horizontal line, mark 0 as the center, and label the numbers -3, -2, -1, 0, 1, 2, 3 from left to right:
 
@@ -110,15 +108,14 @@ Plot a point on a number line
 
 To plot a point, for example -2.5, we first have to understand that -2.5 is between -2 and -3. We can then put a circle on the number line that is halfway between those two numbers:
 
-![number line with one points at -2.5](num-line-2.png)
+![number line with one point at -2.5](num-line-2.png)
 
 Keep in mind that their may be times when we need to plot multiple points on a single number line:
 
-![number line with one points at -2.5](num-line-3.png)
+![number line with multiple points](num-line-3.png)
 
-## Python can create number lines with the matplotlib library
-
-Python’s standard library may not support the number line as a visualization, but matlotlib does make it possible to create a number line:
+## Python Implementation
+Python can create number lines with the matplotlib library. Python’s standard library may not support the number line as a visualization, but matlotlib does make it possible to create a number line:
 ```python
 # import the parts of the matplotlib library we need
 import matplotlib.ticker as ticker
@@ -152,19 +149,12 @@ setup(ax)
 ```
 
 # Expressing Inequalities
-
+## Basic Concept
 An inequality is used to express that one value is greater than or less than some other value (and possibly also equal to the other value). Solutions to inequalities, that is numbers that make the equation true, are infinite.
-
-  
 
 We have three forms of expressing the infinite nature of possible solutions to an inequality: The number line, set-builder notation, and interval notation. In this lesson, we will look at the number line method first and then look at the interval method. We won’t study set-builder notation, but it is very close to what you have probably already seen in many textbooks to express inequalities: Set-builder notation looks similar to $$ x >3 $$ or $$ x \leq 4 $$
 
-## Express inequalities by graphing them on the number line
-
 To express all solutions to an inequality graphically, draw a number line and shade in all the values that are solutions to the inequality. Here are a couple examples.
-
-  
-  
 
 $$ \text{Express the inequality, x is greater than -1 on a number line} $$
 
