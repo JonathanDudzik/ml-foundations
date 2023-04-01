@@ -22,6 +22,7 @@ Python’s standard library supports exponents. We can easily solve exponential 
 `\text{Evaluate}\ a^n\ \text{when}\ a = 5,\ n = 4`$
 
 This one can be solved like this:
+
 ```python
 a = 5
 n = 4
@@ -31,6 +32,7 @@ print("5^4 =", answer)
 # Expected output: 
 # 5^4 = 625
 ```
+
 `\text{Evaluate}\ -a^{a}\ \text{when}\ a=4,\ n=2`$
 
 Be careful with this one because the negative sign before the base means the answer will be negative:
@@ -43,9 +45,11 @@ print("-5^4 =", answer)
 # Expected output: 
 # -5^4 = -16
 ```
+
 `\text{Evaluate}\ (-a)^{n}\ when\ a=2,\ n=3`$
 
 Inside parentheses, the negative sign means that each multiplication will be carried out on a negative base. Just keep in mind that a negative number raised to an odd power is always a negative answer:
+
 ```python
 a = 2
 n = 3
@@ -55,6 +59,7 @@ print("(-2)^3 =", answer)
 # Expected output: 
 # (-2)^3 = -8
 ```
+
 `\text{Evaluate}\ (-a)^{n}\ when\ a=3,\ n=4`$
 
 This is similar to the previous example. Just keep in mind that a negative number raised to an even power is always a positive answer:
@@ -67,6 +72,7 @@ print("(-3)^4 =", answer)
 # Expected output: 
 # (-3)^4 = 81
 ```
+
 # Order of Operations
 ## Basic Concept
 We must have a way of correctly sequencing calculations when an expression contains multiple operations. Otherwise, expressions may have different meanings, and they may result in different values.
@@ -74,11 +80,8 @@ We must have a way of correctly sequencing calculations when an expression conta
 The order of operations is a set of rules used to clarify the order in which mathematical operations should be performed in an expression. Generally, the order of operations is executed left to right on parentheses, exponents, multiplication and division, and addition and subtraction, in that order. Order of operations is also known as the "PEMDAS" rule. Can you see why?
 
 There are three things to keep in mind:
-
 1.  Multiplication and division are of equal priority as long as they are solved left to right.
-    
 2.  The same is true for addition and subtraction: their priority is the same.
-    
 3.  When there are multiple grouping symbols, we simplify the innermost parentheses first and work outward.
 
 ## Python Implementation 
@@ -86,13 +89,11 @@ Python follows the order of operations for all of its mathematical operations.
 
 `\text{Simplify}\ 5 + 23 + 3[6 -3(4\times2)]`$
 
-To simplify an expression means to do all the math possible, using the order of operations. Here is how we can simplify this expression in Python: 
+To simplify an expression means to do all the math possible, using the order of operations. Here is how we can simplify this expression in Python:
+
 ```python
 answer = 10 + 1 + 6 / 2 * (3 - 1)
-print(
-	"Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals",
-	answer
-)
+print(answer)
 
 # Expected output:
 # Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals 17.0
@@ -108,8 +109,6 @@ To create a number line with a scale of -3 to 3, simply draw a horizontal line, 
 
 ![number line without points](num-line-1.png)
 
-Plot a point on a number line
-
 To plot a point, for example -2.5, we first have to understand that -2.5 is between -2 and -3. We can then put a circle on the number line that is halfway between those two numbers:
 
 ![number line with one point at -2.5](num-line-2.png)
@@ -119,7 +118,8 @@ Keep in mind that their may be times when we need to plot multiple points on a s
 ![number line with multiple points](num-line-3.png)
 
 ## Python Implementation
-Python can create number lines with the matplotlib library. Python’s standard library may not support the number line as a visualization, but matlotlib does make it possible to create a number line:
+Python’s standard library may not support the number line as a visualization, but matlotlib does make it possible to create a number line with points. The following Python code will generate a number line, add some points and save an image of the number line to the current directory as a file named num-line.png:
+
 ```python
 # import the parts of the matplotlib library we need
 import matplotlib.ticker as ticker
@@ -127,32 +127,61 @@ import matplotlib.pyplot as plt
 
 def  setup(ax):
 	"""Set up common parameters for the Axes"""
-	# only show the bottom spine
+
+	# Only show the bottom spine.
+	# You can think of a spine as an edge or border.
 	ax.spines[['left', 'right', 'top']].set_visible(False)
 
-	# define ticks for y axis
-	ax.yaxis.set_ticks_position('left')
+	# Make the ticks for the y-axis null.
+	# This next line of code essentially removes...
+	# the ticks for the y-axis.
 	ax.yaxis.set_major_locator(ticker.NullLocator())
-	ax.yaxis.set_major_formatter("")
 
-	# define ticks for x axis
-	ax.xaxis.set_ticks_position('bottom')
+	# Make the ticks for the x-axis 1 inch apart.
 	ax.xaxis.set_major_locator(ticker.MultipleLocator(1.00))
 
-	# define tick styles
+	# Define the tick styles.
 	ax.tick_params(which='major', width=1.00, length=5)
 
-	# Define a number line range
+	# Define number line range.
 	ax.set_xlim(-3, 3)
 	ax.set_ylim(0, 1)
 
-# Create an empty figure with no Axes
-fig = plt.figure()
+# Create an empty figure with no axes.
+# Make the figure 6 inches wide and 4 inches high.
+plt.figure(figsize=(6.0, 4.0))
+
+# Add and center an axis inside the image.
 ax = plt.subplot(2, 1, 1)
+
+# Give that axis the common parameters... 
+# from the setup function.
 setup(ax)
+
+# Create the points on the number line.
+# Each point in defined by a set of two numbers.
+# For each set, the first number is the x-axis position... 
+# and the second number is the y-axis position.
+ax.plot(
+	-1, 0.1, 
+	0, 0.1, 
+	1.5, 0.1, 
+	2, 0.1, 
+	color='tab:blue', 
+	marker='o'
+)
+
+# Save an image of the number line
+plt.savefig("num-line.png")
 ```
+
+
+
 # STOPPED HERE
-Cover the other two number lines you created above (single point and multiple points)
+
+
+
+
 
 # Expressing Inequalities
 ## Basic Concept
