@@ -204,11 +204,9 @@ Interval notation can use parentheses and square brackets, but keep in mind that
 Also keep in mind that infinity and negative infinity are not numbers in the usual sense and cannot be "equal" to another number, so parentheses are used to represent the concept of infinity.
 
 Let’s look at some examples of interval notation to help clarify the rules:
-
+| -------------- | ------------- |
 | All numbers between a and b, including a and b | `[a,b]`$ |
-
 | All numbers between a and b, but not including a or b | `(a,b)`$ |
-
 | All numbers between a and b, including a | `[a,b)`$ |
 
 | All numbers greater than a, but not including a | `(a, \infty)`$ |
