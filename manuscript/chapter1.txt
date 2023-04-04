@@ -138,7 +138,7 @@ def  setup(ax):
 	ax.yaxis.set_major_locator(ticker.NullLocator())
 
 	# Make the ticks for the x-axis 1 inch apart.
-	ax.xaxis.set_major_locator(ticker.MultipleLocator(1.00))
+	ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
 
 	# Define the tick styles.
 	ax.tick_params(which='major', width=1.00, length=5)
@@ -210,14 +210,16 @@ Let’s look at some examples of interval notation to help clarify the rules:
 
 |English |Interval Notation |
 |--------------|-------------|
-| All numbers between a and b, including a and b | `[a,b]`$ |
-| All numbers between a and b, but not including a or b | `(a,b)`$ |
-| All numbers between a and b, including a | `[a,b)`$ |
-| All numbers greater than a, but not including a | `(a, \infty)`$ |
-| All numbers less than b, but not including b | `(-\infty, b)`$ |
+| All numbers between a and b, including a and b \| `[a,b]`$ |
+| All numbers between a and b, but not including a or b | \`(a,b)`$ |
+| All numbers between a and b, including a \| \`[a,b)`$ |
+| All numbers greater than a, but not including a | \`(a, \infty)`$ \|
+| All numbers less than b, but not including b | `(-\infty, b)`$ \|
 | All numbers greater than a, including a | `[a, \infty)`$ |
 | All numbers less than b, including b | `(-\infty,b]`$ |
 | All numbers | `(\infty,\infty)`$ |
+
+`[a, \infty)`$
 
 ## Python Implementation
 Python can graph inequalities on a number line with the matplotlib library, just like when we created a number line with matlotlib. Let us explore the code for graphing our two initial inequality examples, x is greater than -1 and x is less than or equal to 2:
@@ -240,7 +242,7 @@ def  setup(ax):
 	ax.yaxis.set_major_locator(ticker.NullLocator())
 
 	# Make the ticks for the x-axis 1 inch apart.
-	ax.xaxis.set_major_locator(ticker.MultipleLocator(1.00))
+	ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
 
 	# Define the tick styles.
 	ax.tick_params(which='major', width=1.00, length=5)
@@ -273,8 +275,17 @@ setup(ax)
 # Create the points on the number line
 # for figure 1.
 plt.plot([-0.9, 2.9], [0.1, 0.1])
-ax.plot(-1, 0.1, color='tab:blue', fillstyle='none', marker='o')
-ax.plot(2.9, 0.1, color='tab:blue', marker='>')
+ax.plot(
+	-1, 0.1, 
+	color='tab:blue', 
+	fillstyle='none', 
+	marker='o'
+)
+ax.plot(
+	2.9, 0.1, 
+	color='tab:blue', 
+	marker='>'
+)
 
 # Save figure 1 which graphs 
 # the inequality "x is greater than -1".
