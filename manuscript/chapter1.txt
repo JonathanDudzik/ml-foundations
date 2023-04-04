@@ -219,7 +219,8 @@ Let’s look at some examples of interval notation to help clarify the rules:
 | All numbers less than b, including b | `(-\infty,b]`$ |
 | All numbers | `(\infty,\infty)`$ |
 
-`[a, \infty)`$
+All numbers between a and b, including a and b: `[a, \infty)`$
+All numbers: 																		`(\infty,\infty)`$
 
 ## Python Implementation
 Python can graph inequalities on a number line with the matplotlib library, just like when we created a number line with matlotlib. Let us explore the code for graphing our two initial inequality examples, x is greater than -1 and x is less than or equal to 2:
