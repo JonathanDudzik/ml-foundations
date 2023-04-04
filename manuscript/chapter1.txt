@@ -133,7 +133,7 @@ def  setup(ax):
 	ax.spines[['left', 'right', 'top']].set_visible(False)
 
 	# Make the ticks for the y-axis null.
-	# This next line of code essentially removes...
+	# This next line of code essentially removes
 	# the ticks for the y-axis.
 	ax.yaxis.set_major_locator(ticker.NullLocator())
 
@@ -152,15 +152,18 @@ def  setup(ax):
 plt.figure(figsize=(6.0, 4.0))
 
 # Add and center an axis inside the image.
+# The first parameter is the number of rows.
+# The second parameter is the number of columns.
+# The third parameter is an index for grid placement.
 ax = plt.subplot(2, 1, 1)
 
-# Give that axis the common parameters... 
+# Give that axis the common parameters 
 # from the setup function.
 setup(ax)
 
 # Create the points on the number line.
 # Each point in defined by a set of two numbers.
-# For each set, the first number is the x-axis position... 
+# For each set, the first number is the x-axis position
 # and the second number is the y-axis position.
 ax.plot(
 	-1, 0.1, 
@@ -204,130 +207,100 @@ Interval notation can use parentheses and square brackets, but keep in mind that
 Also keep in mind that infinity and negative infinity are not numbers in the usual sense and cannot be "equal" to another number, so parentheses are used to represent the concept of infinity.
 
 Let’s look at some examples of interval notation to help clarify the rules:
-| -------------- | ------------- |
+
+|English |Interval Notation |
+|--------------|-------------|
 | All numbers between a and b, including a and b | `[a,b]`$ |
 | All numbers between a and b, but not including a or b | `(a,b)`$ |
 | All numbers between a and b, including a | `[a,b)`$ |
-
 | All numbers greater than a, but not including a | `(a, \infty)`$ |
-
 | All numbers less than b, but not including b | `(-\infty, b)`$ |
-
 | All numbers greater than a, including a | `[a, \infty)`$ |
-
 | All numbers less than b, including b | `(-\infty,b]`$ |
-
 | All numbers | `(\infty,\infty)`$ |
 
+## Python Implementation
+Python can graph inequalities on a number line with the matplotlib library, just like when we created a number line with matlotlib. Let us explore the code for graphing our two initial inequality examples, x is greater than -1 and x is less than or equal to 2:
 
-STOPPED HERE:
-
-
-## Python can graph inequalities on a number line with the matplotlib library
-
-Just like when we created a number line, matlotlib makes it possible to graph inequalities on the number line. Let us explore the code for graphing our two initial inequality examples, x is greater than -1 and x is less than or equal to 2:
-
+```python
 # import the parts of the matplotlib library we need
-
 import matplotlib.ticker as ticker
-
 import matplotlib.pyplot as plt
 
-  
-
 def  setup(ax):
+	"""Set up common parameters for the Axes"""
 
-"""Set up common parameters for the Axes"""
+	# Only show the bottom spine.
+	# You can think of a spine as an edge or border.
+	ax.spines[['left', 'right', 'top']].set_visible(False)
 
-# only show the bottom spine
+	# Make the ticks for the y-axis null.
+	# This next line of code essentially removes
+	# the ticks for the y-axis.
+	ax.yaxis.set_major_locator(ticker.NullLocator())
 
-ax.spines[['left', 'right', 'top']].set_visible(False)
+	# Make the ticks for the x-axis 1 inch apart.
+	ax.xaxis.set_major_locator(ticker.MultipleLocator(1.00))
 
-  
+	# Define the tick styles.
+	ax.tick_params(which='major', width=1.00, length=5)
 
-# define ticks for y axis
+	# Define number line range.
+	ax.set_xlim(-3, 3)
+	ax.set_ylim(0, 1)
 
-ax.yaxis.set_ticks_position('left')
+# Create an empty figure with no axes.
+# Make the figure 6 inches wide and 4 inches high.
+plt.figure(figsize=(6.0, 4.0))
 
-ax.yaxis.set_major_locator(ticker.NullLocator())
+# Add and center an axis inside the image.
+# The first parameter is the number of rows.
+# The second parameter is the number of columns.
+# The third parameter is an index for grid placement.
+ax = plt.subplot(2, 1, 1)
 
-ax.yaxis.set_major_formatter("")
-
-  
-
-# define ticks for x axis
-
-ax.xaxis.set_ticks_position('bottom')
-
-ax.xaxis.set_major_locator(ticker.MultipleLocator(1.00))
-
-  
-
-# define tick styles
-
-ax.tick_params(which='major', width=1.00, length=5)
-
-  
-
-# define number line range
-
-ax.set_xlim(-3, 3)
-
-ax.set_ylim(0, 1)
-
-  
-
-# You can create multiple figures by using multiple figure calls with an
-
-# increasing figure number. Of course, each figure can contain as many axes
-
-# and subplots as your heart desires.
-
-  
-
-# figure 1 graphs the inequality "x is greater than -1"
-
-plt.figure(1)
-
-ax = plt.subplot(8, 1, 2)
-
+# Give that axis the common parameters
+# from the setup function.
 setup(ax)
 
-  
-
-# markevery with a list marks at those indices OF the plot x y lists (starts at 0)
-
-plt.plot([-0.9, 2.9], [0.2, 0.2])
-
-ax.plot(-1, 0.2, color='tab:blue', fillstyle='none', marker='o')
-
-ax.plot(2.9, 0.2, color='tab:blue', marker='>')
-
-  
-
-# figure 2 graphs the inequality "x is less than or equal to 2"
-
-plt.figure(2)
-
-ax = plt.subplot(8, 1, 2)
-
+# You can create multiple figures by using multiple 
+# figure calls with an increasing figure number.
+# Start figure 1.
+plt.figure(1, figsize=(6.0, 4.0))
+ax = plt.subplot(2, 1, 1)
 setup(ax)
 
-plt.plot([-2.9, 1.9], [0.2, 0.2])
+# Create the points on the number line
+# for figure 1.
+plt.plot([-0.9, 2.9], [0.1, 0.1])
+ax.plot(-1, 0.1, color='tab:blue', fillstyle='none', marker='o')
+ax.plot(2.9, 0.1, color='tab:blue', marker='>')
 
-ax.plot(2, 0.2, color='tab:blue', marker='o')
+# Save figure 1 which graphs 
+# the inequality "x is greater than -1".
+plt.savefig("manuscript/resources/num-line-4.png")
 
-ax.plot(-2.9, 0.2, color='tab:blue', marker='<')
+Start figure 2.
+plt.figure(2, figsize=(6.0, 4.0))
+ax = plt.subplot(2, 1, 1)
+setup(ax)
 
-  
+# Create the points on the number line
+# for figure 2.
+plt.plot([-2.9, 1.9], [0.1, 0.1])
+ax.plot(2, 0.1, color='tab:blue', marker='o')
+ax.plot(-2.9, 0.1, color='tab:blue', marker='<')
+
+# Save figure 2 which graphs 
+# the inequality "x is less than or equal to 2".
+plt.savefig("manuscript/resources/num-line-5.png")
+```
 
 # Absolute Values
 
 |−x| + −|y| when x = −20, y = −14
 
 should be 6
-
-  
 
 −x In front of a variable, it indicates the opposite. We read −x as “the opposite of x.”  
 −(−2) Here there are two “ − ” signs. The one in the parentheses tells us the number is
