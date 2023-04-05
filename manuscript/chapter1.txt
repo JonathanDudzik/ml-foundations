@@ -121,7 +121,6 @@ Keep in mind that their may be times when we need to plot multiple points on a s
 Python’s standard library may not support the number line as a visualization, but matlotlib does make it possible to create a number line with points. The following Python code will generate a number line, add some points and save an image of the number line to the current directory as a file named num-line.png:
 
 ```python
-# import the parts of the matplotlib library we need
 import matplotlib.ticker as ticker
 import matplotlib.pyplot as plt
 
@@ -129,12 +128,9 @@ def  setup(ax):
 	"""Set up common parameters for the Axes"""
 
 	# Only show the bottom spine.
-	# You can think of a spine as an edge or border.
 	ax.spines[['left', 'right', 'top']].set_visible(False)
 
 	# Make the ticks for the y-axis null.
-	# This next line of code essentially removes
-	# the ticks for the y-axis.
 	ax.yaxis.set_major_locator(ticker.NullLocator())
 
 	# Make the ticks for the x-axis 1 inch apart.
@@ -157,8 +153,7 @@ plt.figure(figsize=(6.0, 4.0))
 # The third parameter is an index for grid placement.
 ax = plt.subplot(2, 1, 1)
 
-# Give that axis the common parameters 
-# from the setup function.
+# Give that axis the common parameters.
 setup(ax)
 
 # Create the points on the number line.
@@ -198,7 +193,7 @@ Graphing the above inequality is similar to graphing “x is greater than -1”.
 
 ![number line showing x less than or equal to 2](num-line-5.png)
 
-## Expressing inequalities with interval notation
+## Mathematical Notation
 
 In addition to using the number line, we can use interval notation to express the solutions to an inequality. For example, the inequality “x is greater than 3” can be expressed in the interval notation shown here: `(x, \infty)`$.
 
@@ -221,7 +216,6 @@ All numbers: `(\infty,\infty)`$
 Python can graph inequalities on a number line with the matplotlib library, just like when we created a number line with matlotlib. Let us explore the code for graphing our two initial inequality examples, x is greater than -1 and x is less than or equal to 2:
 
 ```python
-# import the parts of the matplotlib library we need
 import matplotlib.ticker as ticker
 import matplotlib.pyplot as plt
 
@@ -229,12 +223,9 @@ def  setup(ax):
 	"""Set up common parameters for the Axes"""
 
 	# Only show the bottom spine.
-	# You can think of a spine as an edge or border.
 	ax.spines[['left', 'right', 'top']].set_visible(False)
 
 	# Make the ticks for the y-axis null.
-	# This next line of code essentially removes
-	# the ticks for the y-axis.
 	ax.yaxis.set_major_locator(ticker.NullLocator())
 
 	# Make the ticks for the x-axis 1 inch apart.
@@ -257,15 +248,7 @@ plt.figure(figsize=(6.0, 4.0))
 # The third parameter is an index for grid placement.
 ax = plt.subplot(2, 1, 1)
 
-# Give that axis the common parameters
-# from the setup function.
-setup(ax)
-
-# You can create multiple figures by using multiple 
-# figure calls with an increasing figure number.
-# Start figure 1.
-plt.figure(1, figsize=(6.0, 4.0))
-ax = plt.subplot(2, 1, 1)
+# Give that axis the common parameters.
 setup(ax)
 
 # Create the points on the number line
@@ -285,7 +268,7 @@ ax.plot(
 
 # Save figure 1 which graphs 
 # the inequality "x is greater than -1".
-plt.savefig("manuscript/resources/num-line-4.png")
+plt.savefig("num-line-4.png")
 
 Start figure 2.
 plt.figure(2, figsize=(6.0, 4.0))
@@ -300,10 +283,37 @@ ax.plot(-2.9, 0.1, color='tab:blue', marker='<')
 
 # Save figure 2 which graphs 
 # the inequality "x is less than or equal to 2".
-plt.savefig("manuscript/resources/num-line-5.png")
+plt.savefig("num-line-5.png")
 ```
 
 # Absolute Values
+## Basic Concept
+In mathematical equations or expressions, we often use absolute values to ensure that we are only working with positive numbers. \
+For instance, if we have an equation that contains a variable that can be either positive or negative, we can use absolute values to ensure that the final answer is positive.
+
+The absolute value of a number is its distance from 0 on the number line.
+
+The absolute value of a number is always a non-negative value. In other words, the absolute value is always greater than or equal to zero.
+
+ 
+
+Here are the steps to find the absolute value of a number:
+
+1.  Write down the number whose absolute value you want to find.
+    
+2.  If the number is positive, then its absolute value is simply the same as the number itself.
+    
+3.  If the number is negative, then its absolute value is the opposite of the number, without the negative sign.
+
+In summary, the absolute value of a number is always positive, and it is obtained by removing any negative sign from a negative number, or leaving a positive number unchanged.
+
+## Mathematical Notation
+
+The symbol used to represent absolute value is vertical bars, | |. For example, |5| represents the absolute value of 5, and |-5| represents the absolute value of -5.
+
+You can use the absolute value notation (vertical bars) to express the result. For example, |5| = 5 and |-5| = 5.
+
+The absolute value of a number n is written as |n|
 
 |−x| + −|y| when x = −20, y = −14
 
@@ -316,48 +326,18 @@ negative 2. The one outside the parentheses tells us to take the opposite of −
 
 We read −(−2) as “the opposite of negative two.”
 
-  
+For example, the absolute value of 5 is 5 because 5 units away from zero on the number line in the positive direction. The absolute value of -5 is also 5 because -5 units away from zero on the number line in the negative direction.
 
-The absolute value of a number is its distance from 0 on the number line.
+## Python Implementation
 
-The absolute value of a number n is written as |n|
-
-  
-
+```python
 n| ≥ 0 for all numbers
-
-Absolute values are always greater than or equal to zero!
-
-  
-
 x = -20
-
 y = -14
-
 print(abs(-(-x)) + (-abs(y)))
 
 # Expected output: 6
-
-The absolute value of a number is the distance of that number from zero on the number line. The absolute value of a number is always a non-negative value, meaning it is either zero or a positive number.
-
-For example, the absolute value of 5 is 5 because 5 units away from zero on the number line in the positive direction. The absolute value of -5 is also 5 because -5 units away from zero on the number line in the negative direction.
-
-The symbol used to represent absolute value is vertical bars, | |. For example, |5| represents the absolute value of 5, and |-5| represents the absolute value of -5.
-
-In mathematical equations or expressions, we often use absolute values to ensure that we are only working with positive numbers. For instance, if we have an equation that contains a variable that can be either positive or negative, we can use absolute values to ensure that the final answer is positive.
-
-Here are the steps to find the absolute value of a number:
-
-1.  Write down the number whose absolute value you want to find.
-    
-2.  If the number is positive, then its absolute value is simply the same as the number itself. For example, the absolute value of 5 is 5.
-    
-3.  If the number is negative, then its absolute value is the opposite of the number, without the negative sign. For example, the absolute value of -5 is 5.
-    
-4.  You can use the absolute value notation (vertical bars) to express the result. For example, |5| = 5 and |-5| = 5.
-    
-
-In summary, the absolute value of a number is always positive, and it is obtained by removing any negative sign from a negative number, or leaving a positive number unchanged.
+```
 
 # Distance Between Two Points
 
