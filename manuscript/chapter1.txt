@@ -291,21 +291,14 @@ plt.savefig("num-line-5.png")
 In mathematical equations or expressions, we often use absolute values to ensure that we are only working with positive numbers. \
 For instance, if we have an equation that contains a variable that can be either positive or negative, we can use absolute values to ensure that the final answer is positive.
 
-The absolute value of a number is its distance from 0 on the number line.
-
-The absolute value of a number is always a non-negative value. In other words, the absolute value is always greater than or equal to zero.
-
- 
-
-Here are the steps to find the absolute value of a number:
-
-1.  Write down the number whose absolute value you want to find.
-    
-2.  If the number is positive, then its absolute value is simply the same as the number itself.
-    
-3.  If the number is negative, then its absolute value is the opposite of the number, without the negative sign.
+There are four rules to remember about absolute values:
+1. The absolute value of a number is its distance from 0 on the number line.
+2. The absolute value of a number is always a non-negative value. In other words, the absolute value is always greater than or equal to zero.
+3. If the number is positive, then its absolute value is simply the same as the number itself.
+4. If the number is negative, then its absolute value is the opposite of the number (remove the the negative sign).
 
 In summary, the absolute value of a number is always positive, and it is obtained by removing any negative sign from a negative number, or leaving a positive number unchanged.
+
 
 ## Mathematical Notation
 
