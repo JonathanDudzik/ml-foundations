@@ -288,7 +288,7 @@ plt.savefig("num-line-5.png")
 
 # Absolute Values
 ## Basic Concept
-In mathematical equations or expressions, we often use absolute values to ensure that we are only working with positive numbers. \
+In mathematical equations or expressions, we often use absolute values to ensure that we are only working with positive numbers.
 For instance, if we have an equation that contains a variable that can be either positive or negative, we can use absolute values to ensure that the final answer is positive.
 
 There are four rules to remember about absolute values:
