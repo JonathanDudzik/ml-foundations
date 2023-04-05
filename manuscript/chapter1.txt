@@ -203,15 +203,6 @@ Also keep in mind that infinity and negative infinity are not numbers in the usu
 
 Let’s look at some examples of interval notation to help clarify the rules:
 
-All numbers between a and b, including a and b: `[a,b]`$
-All numbers between a and b, but not including a or b: `(a,b)`$
-All numbers between a and b, including a: `[a,b)`$
-All numbers greater than a, but not including a: `(a, \infty)`$
-All numbers less than b, but not including b: `(-\infty, b)`$
-All numbers greater than a, including a: `[a, \infty)`$
-All numbers less than b, including b: `(-\infty,b]`$
-All numbers: `(\infty,\infty)`$
-
 ## Python Implementation
 Python can graph inequalities on a number line with the matplotlib library, just like when we created a number line with matlotlib. Let us explore the code for graphing our two initial inequality examples, x is greater than -1 and x is less than or equal to 2:
 
@@ -288,7 +279,7 @@ plt.savefig("num-line-5.png")
 
 # Absolute Values
 ## Basic Concept
-In mathematical equations or expressions, we often use absolute values to ensure that we are only working with positive numbers.
+In mathematical equations or expressions, we often use absolute values to ensure that we are only working with positive numbers. \
 For instance, if we have an equation that contains a variable that can be either positive or negative, we can use absolute values to ensure that the final answer is positive.
 
 There are four rules to remember about absolute values:
