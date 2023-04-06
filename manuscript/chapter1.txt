@@ -1,1 +1,174 @@
 # Mathematics with Python for ML Foundations!
+
+# Exponents
+## Basic Concept
+There are times when we must multiply a number by itself multiple times. We could do something like this:
+
+`2 \times 2 \times 2 \times 2 \times 2 \times 2`$
+
+But this can be a tedious way to show such an expression and hard to track how many times it is getting multiplied. Instead, we use exponents to show how many times to multiply a number. Here is an example of exponential notation:
+
+`a^{n}`$
+
+In this exponential notation, the variable `a`$ is called the base and the variable `n`$ is called the exponent. The exponent represents the number of times to multiply the base by itself. We can evaluate the exponential notation when the two variables are replaced with a number like this:
+
+`2^{6}`$
+
+In this example the number two is the base and the number six is the exponent. To solve this, we need to multiply the number two six times.
+
+## Python Implementation
+Python’s standard library supports exponents. We can easily solve exponential problems with Python using the exponentiation operator. Here are a few examples:
+
+`\text{Evaluate}\ a^n\ \text{when}\ a = 5,\ n = 4`$
+
+This one can be solved like this:
+
+```python
+a = 5
+n = 4
+answer = a ** n
+print("5^4 =", answer)
+
+# Expected output: 
+# 5^4 = 625
+```
+
+`\text{Evaluate}\ -a^{a}\ \text{when}\ a=4,\ n=2`$
+
+Be careful with this one because the negative sign before the base means the answer will be negative:
+```python
+a = 4
+n = 2
+answer = -a ** n
+print("-5^4 =", answer)
+
+# Expected output: 
+# -5^4 = -16
+```
+
+`\text{Evaluate}\ (-a)^{n}\ when\ a=2,\ n=3`$
+
+Inside parentheses, the negative sign means that each multiplication will be carried out on a negative base. Just keep in mind that a negative number raised to an odd power is always a negative answer:
+
+```python
+a = 2
+n = 3
+answer = (-a) ** n
+print("(-2)^3 =", answer)
+
+# Expected output: 
+# (-2)^3 = -8
+```
+
+`\text{Evaluate}\ (-a)^{n}\ when\ a=3,\ n=4`$
+
+This is similar to the previous example. Just keep in mind that a negative number raised to an even power is always a positive answer:
+```python
+a = 3
+n = 4
+answer = (-a) ** n
+print("(-3)^4 =", answer)
+
+# Expected output: 
+# (-3)^4 = 81
+```
+
+# Order of Operations
+## Basic Concept
+We must have a way of correctly sequencing calculations when an expression contains multiple operations. Otherwise, expressions may have different meanings, and they may result in different values.
+
+The order of operations is a set of rules used to clarify the order in which mathematical operations should be performed in an expression. Generally, the order of operations is executed left to right on parentheses, exponents, multiplication and division, and addition and subtraction, in that order. Order of operations is also known as the "PEMDAS" rule. Can you see why?
+
+There are three things to keep in mind:
+1.  Multiplication and division are of equal priority as long as they are solved left to right.
+2.  The same is true for addition and subtraction: their priority is the same.
+3.  When there are multiple grouping symbols, we simplify the innermost parentheses first and work outward.
+
+## Python Implementation 
+Python follows the order of operations for all of its mathematical operations.
+
+`\text{Simplify}\ 5 + 23 + 3[6 -3(4\times2)]`$
+
+To simplify an expression means to do all the math possible, using the order of operations. Here is how we can simplify this expression in Python:
+
+```python
+answer = 10 + 1 + 6 / 2 * (3 - 1)
+print(answer)
+
+# Expected output:
+# Simplifying 10 + 1 + 6 / 2 * (3 - 1) equals 17.0
+```
+
+# Plotting Points and Intervals on the Number Line
+## Basic Concept
+In this section, we will explore a basic number line and the steps to plot points and intervals on a number line.
+
+A number line is just a horizontal line that is used to display all the possible outcomes. It is similar to a ruler in that it helps us describe and compare numbers. We get to choose the scale of the number line and where the center is. For example, we might decide that we only need to show the numbers 70 through 90 where 80 would be the center of our number line. Typically however, number lines have zero at their center with positive numbers to the right of the zero and negative number to the left of the zero.
+
+To create a number line with a scale of -3 to 3, simply draw a horizontal line, mark 0 as the center, and label the numbers -3, -2, -1, 0, 1, 2, 3 from left to right:
+
+![number line without points](num-line-1.png)
+
+To plot a point, for example -2.5, we first have to understand that -2.5 is between -2 and -3. We can then put a circle on the number line that is halfway between those two numbers:
+
+![number line with one point at -2.5](num-line-2.png)
+
+Keep in mind that their may be times when we need to plot multiple points on a single number line:
+
+![number line with multiple points](num-line-3.png)
+
+## Python Implementation
+Python’s standard library may not support the number line as a visualization, but matlotlib does make it possible to create a number line with points. The following Python code will generate a number line, add some points and save an image of the number line to the current directory as a file named num-line.png:
+
+```python
+import matplotlib.ticker as ticker
+import matplotlib.pyplot as plt
+
+def  setup(ax):
+	"""Set up common parameters for the Axes"""
+
+	# Only show the bottom spine.
+	ax.spines[['left', 'right', 'top']].set_visible(False)
+
+	# Make the ticks for the y-axis null.
+	ax.yaxis.set_major_locator(ticker.NullLocator())
+
+	# Make the ticks for the x-axis 1 inch apart.
+	ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
+
+	# Define the tick styles.
+	ax.tick_params(which='major', width=1.00, length=5)
+
+	# Define number line range.
+	ax.set_xlim(-3, 3)
+	ax.set_ylim(0, 1)
+
+# Create an empty figure with no axes.
+# Make the figure 6 inches wide and 4 inches high.
+plt.figure(figsize=(6.0, 4.0))
+
+# Add and center an axis inside the image.
+# The first parameter is the number of rows.
+# The second parameter is the number of columns.
+# The third parameter is an index for grid placement.
+ax = plt.subplot(2, 1, 1)
+
+# Give that axis the common parameters.
+setup(ax)
+
+# Create the points on the number line.
+# Each point in defined by a set of two numbers.
+# For each set, the first number is the x-axis position
+# and the second number is the y-axis position.
+ax.plot(
+	-1, 0.1, 
+	0, 0.1, 
+	1.5, 0.1, 
+	2, 0.1, 
+	color='tab:blue', 
+	marker='o'
+)
+
+# Save an image of the number line
+plt.savefig("num-line.png")
+```
