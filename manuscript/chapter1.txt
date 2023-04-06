@@ -172,4 +172,49 @@ ax.plot(
 # Save an image of the number line
 plt.savefig("num-line.png")
 ```
-# HELLO World! 
+
+# Expressing Inequalities
+## Basic Concept
+An inequality is used to express that one value is greater than or less than some other value (and possibly also equal to the other value). Solutions to inequalities, that is numbers that make the equation true, are infinite.
+
+We have three forms of expressing the infinite nature of possible solutions to an inequality: The number line, set-builder notation, and interval notation. In this lesson, we will look at the number line method first and then look at the interval method. We won’t study set-builder notation, but it is very close to what you have probably already seen in many textbooks to express inequalities: Set-builder notation looks similar to `x >3`$ or `x \leq 4`$
+
+To express all solutions to an inequality graphically, draw a number line and shade in all the values that are solutions to the inequality. Here are a couple examples:
+
+`\text{Express the inequality, x is greater than -1 on a number line}`$
+
+We graph the solutions to the above inequality on the number line by shading in all the numbers to the right of -1 to show that all numbers greater than -1 are solutions. Because the number -1 itself is not included in the solution, we use an open dot on the number line at -1:
+
+![number line showing x greater than -1](num-line-4.png)
+
+`\text{Express the inequality, x is less than or equal to 2 on a number line}`$
+
+Graphing the above inequality is similar to graphing “x is greater than -1”. However we need to do two things differently this time: First we need to shade the number line in the negative direction and second we need to show that 2 is included in the solution by using a closed dot on the number line:
+
+![number line showing x less than or equal to 2](num-line-5.png)
+
+## Mathematical Notation
+
+In addition to using the number line, we can use interval notation to express the solutions to an inequality. For example, the inequality “x is greater than 3” can be expressed in the interval notation shown here: `(x, \infty)`$.
+
+Interval notation can use parentheses and square brackets, but keep in mind that parentheses and square brackets mean different things. Parentheses are used to indicate that the solution is greater or less than a number, while square brackets indicate that the solution is also equal to a number (in addition to being either greater or less than).
+
+Also keep in mind that infinity and negative infinity are not numbers in the usual sense and cannot be "equal" to another number, so parentheses are used to represent the concept of infinity.
+
+Let’s look at some examples of interval notation to help clarify the rules:
+
+All numbers between a and b, including a and b: `[a,b]`$
+
+All numbers between a and b, but not including a or b: `(a,b)`$
+
+All numbers between a and b, including a: `[a,b)`$
+
+All numbers greater than a, but not including a: `(a, \infty)`$
+
+All numbers less than b, but not including b: `(-\infty, b)`$
+
+All numbers greater than a, including a: `[a, \infty)`$
+
+All numbers less than b, including b: `(-\infty,b]`$
+
+All numbers: `(\infty,\infty)`$
