@@ -307,9 +307,9 @@ There are four rules to remember about absolute values:
 In summary, the absolute value of a number is always positive, and it is obtained by removing any negative sign from a negative number, or leaving a positive number unchanged.
 
 ## Mathematical Notation
-The symbol used to represent absolute value is vertical bars, |`n`$|.
+The symbol used to represent absolute value is vertical bars, | `n`$ |.
 For example, `|-5|`$ represents the absolute value of 5.
-Or using a variable, the absolute value of `n`$ is written as |`n`$|.
+Or using a variable, the absolute value of `n`$ is written as `| n |`$.
 The rule that absolute values are equal to or great than 0 can be express like this: `|n| ≥ 0`$
 
 ## Python Implementation
@@ -323,3 +323,15 @@ print(abs(x) + abs(y))
 # Expected output: 
 # 34
 ```
+
+
+|−x| + −|y| when x = −20, y = −14
+
+should be 6
+
+−x In front of a variable, it indicates the opposite. We read −x as “the opposite of x.”  
+−(−2) Here there are two “ − ” signs. The one in the parentheses tells us the number is
+
+negative 2. The one outside the parentheses tells us to take the opposite of −2.
+
+We read −(−2) as “the opposite of negative two.”
