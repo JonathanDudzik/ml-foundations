@@ -374,9 +374,16 @@ Round 3.426 to the nearest hundredth.
 Lets first determine which number is in the hundredths and thousands column:
 
 | ones | decimal | tenths | hundredths | thousandths |
-|------------|------------|------------|------------|
+| ----- | ----- | ----- | ----- | ------ |
 | 3 | . | 4 | 2 | 6 |
 
+Here is  test table
+
+| Column 1 | Column 2 | Column 3 |
+| --- | --- | --- |
+| Row 1, Column 1 | Row 1, Column 2 | Row 1, Column 3 |
+| Row 2, Column 1 | Row 2, Column 2 | Row 2, Column 3 |
+| Row 3, Column 1 | Row 3, Column 2 | Row 3, Column 3 |
 From the table above, we can determine that the number in the hundredth column is 2
 and in the thousands column we have 6.
 
