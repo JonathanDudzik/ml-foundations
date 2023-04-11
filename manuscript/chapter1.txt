@@ -405,8 +405,27 @@ Round 2.95 to the nearest tenth.
 Since 5 in the hundredths column will round up and 9 becomes 10, we end up with 3.0.
 Therefore, 2.95 rounded to the nearest tenth equals 3.0.
 
+## Python Implementation
+Rounding in Python requires that we know two things:
+1. The number to round (obvisouly)
+2. How many decimal places to round to (like tenths or hundrenths, for example)
 
-Rounding
+Once we know both of those, we can plug them into the
+Python standard library's round function like so:
+
+```python
+rounded_number = round(37.5767)
+print("No decimal place:", rounded_number)
+
+rounded_number = round(37.5767, 1)
+print("One decimal place:", rounded_number)
+
+rounded_number = round(37.5767, 2)
+print("Two decimal places:", rounded_number)
+
+rounded_number = round(37.5767, 3)
+print("Three decimal places", rounded_number)
+```
 
 # Ordering Decimal Numbers
 ## Basic Concept
@@ -423,79 +442,40 @@ of the decimal numbers end while the other continues.
 Continue comparing digits to the right until one of these four 
 conditions are met or the decimal numbers are proven to be equal.
 
-__STOPPED HERE___
+Here is a visualization of some decimal numbers sorted in 
+ascending order in a table view where you can see more clearly 
+how the place values are important:
 
-For example, let's say you have the following 
-decimal numbers: 2.45, 3.1, 1.98, 2.4, and 3.02. 
-To order these numbers from the smallest to the 
-largest, you would start by comparing the leftmost 
-digit of each number:
--   1.98
--   2.4
--   2.45
--   3.02
--   3.1
-In this case, the decimal numbers are now in ascending 
-order from the smallest (1.98) to the largest (3.1).
+| tens | ones | decimal | tenths | hundredths |
+| :-----: | :-----: | :-----: | :-----: | :-----: |
+| | 0 | . | 1 | 2 |
+|  | 1 | . | 1 | 2 |
+|  | 2 | . | 7 | 1 |
+|  | 3 | . | 1 | 4 |
+| 1 | 4 | . | 2 | |
 
-If you need to order decimal numbers from the largest 
-to the smallest, you can use the same process but 
-compare the digits in the reverse order. In the example 
-above, the decimal numbers ordered from largest to 
-smallest would be:
--   3.1
--   3.02
--   2.45
--   2.4
--   1.98
-
-In summary, to order decimal numbers, compare the digits 
-of each number starting from the left and move to the 
-right as needed.
-
-
-In Python, you can use the built-in sorted() function 
-to order decimal numbers in ascending or descending order. 
-Here's an example:
+## Python Implementation
+Use the Python standard library's sorted function 
+to order decimal numbers in ascending or descending order:
 
 ```python
-# Create a list of decimal numbers
+# Sort a list in ascending order
 decimals = [3.14, 2.71, 1.618, 4.20, 0.123]
 
-# Sort the list in ascending order
 sorted_decimals = sorted(decimals)
 
-print(sorted_decimals) # Output: [0.123, 1.618, 2.71, 3.14, 4.2]
-  
-# Sort the list in descending order
-sorted_decimals_desc = sorted(decimals, reverse=True)
+print(sorted_decimals) 
 
-print(sorted_decimals_desc) # Output: [4.2, 3.14, 2.71, 1.618, 0.123]
+# Expected Output: 
+# [0.123, 1.618, 2.71, 3.14, 4.2]
 ```
-
-In the example above, we created a list of decimal numbers 
-and used the sorted() function to order them in ascending 
-order by default. We then used the reverse parameter of 
-the sorted() function to sort the list in descending order. 
-
-Note that the original list decimals remains unchanged, 
-and the sorted lists are assigned to new variables 
-sorted_decimals and sorted_decimals_desc.
-
-If you have a list of strings that represent decimal 
-numbers, you can convert them to floats first before 
-sorting them. Here's an example:
 
 ```python
-# Create a list of decimal numbers as strings
-decimals_str = ['3.14', '2.71', '1.618', '4.20', '0.123']
+# Sort a list in descending order
+sorted_decimals = sorted(decimals, reverse=True)
 
-# Convert the strings to floats and sort the list in ascending order
-sorted_decimals = sorted([float(d) for d in decimals_str])
+print(sorted_decimals) 
 
-print(sorted_decimals) # Output: [0.123, 1.618, 2.71, 3.14, 4.2]
+# Expected Output: 
+# [4.2, 3.14, 2.71, 1.618, 0.123]
 ```
-
-In this example, we used a list comprehension to convert each 
-string in the decimals_str list to a float, and then sorted 
-the resulting list in ascending order using the sorted() function.
