@@ -367,8 +367,7 @@ is less than 5.
 There are other forms of rounding where the digit being rounded is always rounded either down (also called floor rounding) 
 or up (also called ceiling rounding), regardless of it is greater or less than 5.
 
-Let us look at an example of rounding decimals:
-
+Let us look at an example of rounding decimals: 
 Round 3.426 to the nearest hundredth.
 
 Lets first determine which number is in the hundredths and thousands column:
@@ -383,9 +382,7 @@ and in the thousands column we have 6.
 Since 6 in the thousands column is greater than 5, we will round up and make the 2 from the hundredths column 3
 and remove the 6. Therefore, 3.426 rounded to the nearest hundredth is 3.43.
 
-Here is another example:
-
-Round 7.943 to the nearest tenth.
+Here is another example: Round 7.943 to the nearest tenth.
 
 | ones | decimal | tenths | hundredths | thousandths |
 | :-----: | :-----: | :-----: | :-----: | :-----: |
@@ -394,9 +391,7 @@ Round 7.943 to the nearest tenth.
 Since 4 in the hundredths column is less than 5, we will simply remove it and any numbers 
 to the right of it. Therefore, 7.943 rounded to the nearest tenth is 7.9.
 
-One more example:
-
-Round 2.95 to the nearest tenth.
+One more example: Round 2.95 to the nearest tenth.
 
 | ones | decimal | tenths | hundredths |
 | :-----: | :-----: | :-----: | :-----: |
@@ -479,3 +474,22 @@ print(sorted_decimals)
 # Expected Output: 
 # [4.2, 3.14, 2.71, 1.618, 0.123]
 ```
+
+# Converting Fractions and Percepts to Decimals
+## Basic Concept
+
+Decimals are usually the optimum format when working with
+computer programs like excel or code like Python.
+
+To convert a fraction (sometimes called a mixed number) 
+to decimal simply divide the top of the fraction by 
+the bottom.
+
+For example: `\frac{5}{8}`$ = 0.625
+
+To convert a percent to a decimal simply divide the perceptage
+by 100.
+
+For example: `25% = 0.25`$ because `25\div100 = 0.25`$
+
+## Python Implementation
